@@ -1,8 +1,10 @@
+
+
 const LandingPage = () => {
 
     const url = new URL(window.location.href);
     const origin = url.origin;
-    const registerUrl = new URL('/register', origin);
+    const landingPage = new URL('/', origin);
 
     return (
         <div className="grid justify-items-center bg-zinc-100 h-screen"> 
@@ -20,17 +22,23 @@ const LandingPage = () => {
                 zIndex: 0,
             }}></div>
             <h1 className="text-3xl font-bold relative top-1/2 h-8">Grit Journal</h1>
-            <div className="container bg-zinc-400/50 w-64 h-48 rounded-lg border-2 border-stone-500 grid justify-items-center content-center p-4 z-10">
+            <div className="container bg-zinc-400/50 w-64 h-60 rounded-lg border-2 border-stone-500 grid justify-items-center content-center p-4 z-10">
                 <div className="m-2 text-center">
-                    <input type="text" className="w-4/5 text-center rounded-md" placeholder="Username"/>
+                    <input type="text" className="w-5/5 text-center rounded-md" placeholder="Enter your email"/>
                 </div>
                 <div className="m-2 text-center">
-                    <input type="password" className="w-4/5 text-center rounded-md" placeholder="Password"/>
+                    <input type="text" className="w-5/5 text-center rounded-md" placeholder="Reapeat your email"/>
+                </div>
+                <div className="m-2 text-center">
+                    <input type="password" className="w-5/5 text-center rounded-md" placeholder="Choose a password"/>
+                </div>
+                <div className="m-2 text-center">
+                    <input type="password" className="w-5/5 text-center rounded-md" placeholder="Repeat your password"/>
                 </div>
                 <button className="bg-zinc-500 hover:bg-zinc-700 text-white font-bold py-1 px-4 rounded inline-block h-8 m-2">
-                    Login
+                    Register
                 </button>
-                <p style={{fontSize: '12px'}}>Don't have an account? Register <a href={registerUrl.toString()} style={{fontWeight: 'bold'}}>here</a></p>
+                <p style={{fontSize: '12px'}}>Already have an account? Login <a href={landingPage.toString()} style={{fontWeight: 'bold'}}>here</a></p>
             </div>
         </div>
     );
